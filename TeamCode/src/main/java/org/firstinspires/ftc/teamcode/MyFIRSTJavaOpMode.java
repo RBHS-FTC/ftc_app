@@ -1,12 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Gyroscope;
 import com.qualcomm.robotcore.hardware.Servo;
 
+@TeleOp
 public class MyFIRSTJavaOpMode extends LinearOpMode {
     private Gyroscope imu;
     private DcMotor motorTest;
@@ -20,5 +22,16 @@ public class MyFIRSTJavaOpMode extends LinearOpMode {
         motorTest = hardwareMap.get(DcMotor.class, "MotorTest");
         digitalTouch = hardwareMap.get(DigitalChannel.class, "digitalTouch");
         sensorColorRange = hardwareMap.get(DistanceSensor.class, "sensorColorRange");
+        servoTest = hardwareMap.get(Servo.class, "servoTest");
+
+        telemetry.addData("Status", "Initalized");
+        telemetry.update();
+
+        waitForStart();
+
+
+        while (opModeIsActive()) {
+            telemetry.addData("Status", "Running");
+        }
     }
 }
