@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import junit.framework.Test;
 
 @TeleOp
-public class MotorTest extends LinearOpMode {
+public class ServoTest extends LinearOpMode {
     private DcMotor motorTest;
     private Servo servoTest;
 
@@ -20,7 +20,7 @@ public class MotorTest extends LinearOpMode {
         motorTest = hardwareMap.get(DcMotor.class, "Motor01");
         servoTest = hardwareMap.get(Servo.class, "Servo01");
 
-        telemetry.addData("Status", "Initalized");
+        telemetry.addData("Status", "Initialized");
         telemetry.update();
 
         waitForStart();
@@ -40,7 +40,7 @@ public class MotorTest extends LinearOpMode {
             } else if (gamepad1.a) {
                 // move to 180 degrees.
                 // Servo stuck at 180 degrees
-                servoTest.setPosition(0.95);
+                servoTest.setPosition(0.99);
             }
             telemetry.addData("Servo Position", servoTest.getPosition());
             telemetry.addData("Target Power", tgtPower);
@@ -49,17 +49,5 @@ public class MotorTest extends LinearOpMode {
             telemetry.update();
 
         }
-        /*
-        double tgtPower = 0;
-        while (opModeIsActive()) {
-            tgtPower = -this.gamepad1.left_stick_y;
-            motorTest.setPower(tgtPower);
-            telemetry.addData("Target Power", tgtPower);
-            telemetry.addData("servoTest", motorTest.getPower());
-            telemetry.addData("Status", "Initialized");
-            telemetry.update();
-        }
-        */
-
     }
 }
