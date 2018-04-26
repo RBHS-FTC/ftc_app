@@ -8,8 +8,10 @@ import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Gyroscope;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import junit.framework.Test;
+
 @TeleOp
-public class MyFIRSTJavaOpMode extends LinearOpMode {
+public class MotorTest extends LinearOpMode {
     private Gyroscope imu;
     private DcMotor motorTest;
     private DigitalChannel digitalTouch;
@@ -18,10 +20,8 @@ public class MyFIRSTJavaOpMode extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        motorTest = hardwareMap.get(DcMotor.class, "MotorTest");
-        digitalTouch = hardwareMap.get(DigitalChannel.class, "digitalTouch");
-        sensorColorRange = hardwareMap.get(DistanceSensor.class, "sensorColorRange");
-        servoTest = hardwareMap.get(Servo.class, "servoTest");
+        motorTest = hardwareMap.get(DcMotor.class, "Motor01");
+        servoTest = hardwareMap.get(Servo.class, "Servo01");
 
         telemetry.addData("Status", "Initalized");
         telemetry.update();
@@ -30,12 +30,33 @@ public class MyFIRSTJavaOpMode extends LinearOpMode {
 
         double tgtPower = 0;
         while (opModeIsActive()) {
+            /*
             tgtPower = -this.gamepad1.left_stick_y;
             motorTest.setPower(tgtPower);
+            // check to see if we need to move the servo.
+            if (gamepad1.y) {
+                // move to 0 degrees.
+                servoTest.setPosition(0);
+            } else if (gamepad1.x || gamepad1.b) {
+                // move to 90 degrees.
+                servoTest.setPosition(0.5);
+            } else if (gamepad1.a) {
+                // move to 180 degrees.
+                servoTest.setPosition(1);
+            }
+            telemetry.addData("Servo Position", servoTest.getPosition());
             telemetry.addData("Target Power", tgtPower);
             telemetry.addData("Motor Power", motorTest.getPower());
+            telemetry.addData("Status", "Running");
+            telemetry.update();
+            */
+            tgtPower = 1; //-this.gamepad1.left_stick_y;
+            motorTest.setPower(tgtPower);
+            telemetry.addData("Target Power", tgtPower);
+            telemetry.addData("servoTest", motorTest.getPower());
             telemetry.addData("Status", "Initialized");
             telemetry.update();
         }
+
     }
 }
