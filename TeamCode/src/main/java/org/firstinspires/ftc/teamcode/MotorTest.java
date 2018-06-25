@@ -22,7 +22,7 @@ public class MotorTest extends LinearOpMode {
 			tgtPower = -this.gamepad1.left_stick_y;
 			MotorTest.setPower(tgtPower);
 			telemetry.addData("Target Power", tgtPower);
-			telemetry.addData("servoTest", MotorTest.getPower());
+			telemetry.addData("motorTest", MotorTest.getPower());
 			telemetry.addData("Status", "Initialized");
 			telemetry.update();
 		}
