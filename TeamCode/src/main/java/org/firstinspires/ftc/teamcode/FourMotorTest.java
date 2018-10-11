@@ -23,14 +23,30 @@ public class FourMotorTest extends LinearOpMode{
 
         waitForStart();
 
-        double controllerPower = 0;
+        double conPwrX = 0;
+        double conPwrY = 0;
         while (opModeIsActive()) {
-            controllerPower = -this.gamepad1.left_stick_y;
-            Motor1.setPower(controllerPower);
-            Motor2.setPower(controllerPower);
-            Motor3.setPower(controllerPower);
-            Motor4.setPower(controllerPower);
-            telemetry.addData("Target Power", controllerPower);
+            conPwrX = -this.gamepad1.left_stick_x;
+            conPwrY = -this.gamepad1.left_stick_y;
+            Motor1.setPower(-conPwrY);
+            Motor2.setPower(conPwrY);
+            Motor3.setPower(conPwrY);
+            Motor4.setPower(-conPwrY);
+
+            /*
+            Diagonal Strafe
+            M1 = +
+            M2 = +
+            M3 = -
+            M4 = -
+
+            Forward & Back
+            M1 = -
+            M2 = +
+            M3 = +
+            M4 = -
+             */
+            telemetry.addData("Target Power", conPwrY);
             telemetry.addData("Motor1", Motor1.getPower());
             telemetry.addData("Motor2", Motor2.getPower());
             telemetry.addData("Motor3", Motor3.getPower());
