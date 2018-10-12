@@ -10,15 +10,7 @@ Note that the wiki is an "evergreen" document that is constantly being updated a
 ## Downloading the Project
 It is important to note that this repository is large and can take a long time and use a lot of space to download. If you would like to save time and space, there are some options that you can choose to download only the most current version of the Android project folder:
 
-* If you are a git user, *FIRST* recommends that you use the --depth command line argument to only clone the most current version of the repository:
-
-`git clone --depth=1 https://github.com/ftctechnh/ftc_app.git`
-
-* Or, if you prefer, you can use the "Download Zip" button available through the main repository page.  Downloading the project as a .ZIP file will keep the size of the download manageable.
-
-* You can also download the project folder (as a .zip or .tar.gz archive file) from the Downloads subsection of the Releases page for this repository.
-
-Once you have downloaded and uncompressed (if needed) your folder, you can use Android Studio to import the folder  ("Import project (Eclipse ADT, Gradle, etc.)").
+`git clone --depth=1 https://github.com/RBHS-FTC/ftc_app.git`
 
 ## Getting Help
 ### User Documentation and Tutorials
