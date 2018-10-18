@@ -13,10 +13,10 @@ public class FourMotorTest extends LinearOpMode{
 
     @Override
     public void runOpMode() {
-        Motor0 = hardwareMap.get(DcMotor.class, "Motor1");
-        Motor1 = hardwareMap.get(DcMotor.class, "Motor2");
-        Motor2 = hardwareMap.get(DcMotor.class, "Motor3");
-        Motor3 = hardwareMap.get(DcMotor.class, "Motor4");
+        Motor0 = hardwareMap.get(DcMotor.class, "Motor0");
+        Motor1 = hardwareMap.get(DcMotor.class, "Motor1");
+        Motor2 = hardwareMap.get(DcMotor.class, "Motor2");
+        Motor3 = hardwareMap.get(DcMotor.class, "Motor3");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -47,10 +47,10 @@ public class FourMotorTest extends LinearOpMode{
             M3 = -
              */
             telemetry.addData("Target Power", conPwrY);
-            telemetry.addData("Motor1", Motor0.getPower());
-            telemetry.addData("Motor2", Motor1.getPower());
-            telemetry.addData("Motor3", Motor2.getPower());
-            telemetry.addData("Motor4", Motor3.getPower());
+            telemetry.addData("Motor0", Motor0.getPower());
+            telemetry.addData("Motor1", Motor1.getPower());
+            telemetry.addData("Motor2", Motor2.getPower());
+            telemetry.addData("Motor3", Motor3.getPower());
             telemetry.update();
         }
     }
