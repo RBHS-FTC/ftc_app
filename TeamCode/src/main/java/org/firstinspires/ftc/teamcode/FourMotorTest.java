@@ -35,16 +35,16 @@ public class FourMotorTest extends LinearOpMode{
 
             /*
             Diagonal Strafe
+            M0 = +
+            M1 = +
+            M2 = -
+            M3 = -
+
+            Forward & Back
+            M0 = -
             M1 = +
             M2 = +
             M3 = -
-            M4 = -
-
-            Forward & Back
-            M1 = -
-            M2 = +
-            M3 = +
-            M4 = -
              */
             telemetry.addData("Target Power", conPwrY);
             telemetry.addData("Motor1", Motor0.getPower());
