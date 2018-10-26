@@ -23,10 +23,8 @@ public class FourMotorTest extends LinearOpMode{
 
         waitForStart();
 
-        double conPwrX = 0;
         double conPwrY = 0;
         while (opModeIsActive()) {
-            conPwrX = -this.gamepad1.left_stick_x;
             conPwrY = -this.gamepad1.left_stick_y;
             Motor0.setPower(-conPwrY);
             Motor1.setPower(conPwrY);
