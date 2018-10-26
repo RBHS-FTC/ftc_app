@@ -44,7 +44,7 @@ public class FourMotorTest extends LinearOpMode{
             M2 = +
             M3 = -
              */
-            telemetry.addData("Target Power", conPwrY);
+            telemetry.addData("Motor Power", conPwrY);
             telemetry.addData("Motor0", Motor0.getPower());
             telemetry.addData("Motor1", Motor1.getPower());
             telemetry.addData("Motor2", Motor2.getPower());
