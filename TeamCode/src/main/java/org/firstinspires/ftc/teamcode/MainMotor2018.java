@@ -34,7 +34,7 @@ public class MainMotor2018 extends LinearOpMode{
             Motor3.setPower(-controllerPowerY);
 
             //Left and Right turning
-            controllerPowerX = -this.gamepad1.right_stick_x;
+            controllerPowerX = -this.gamepad1.left_stick_x;
             Motor0.setPower(controllerPowerX);
             Motor1.setPower(controllerPowerX);
             Motor2.setPower(controllerPowerX);
@@ -45,7 +45,22 @@ public class MainMotor2018 extends LinearOpMode{
             M1 = +
             M2 = -
             M3 = -
+            */
 
+            //  Must Be Checked
+            controllerPowerX = -this.gamepad1.right_stick_x;
+            Motor0.setPower(controllerPowerX);
+            Motor1.setPower(controllerPowerX);
+            Motor2.setPower(-controllerPowerX);
+            Motor3.setPower(-controllerPowerX);
+
+            // Must Be Checked
+            controllerPowerX = -this.gamepad1.right_stick_y;
+            Motor0.setPower(-controllerPowerX);
+            Motor1.setPower(-controllerPowerX);
+            Motor2.setPower(controllerPowerX);
+            Motor3.setPower(controllerPowerX);
+            /*
             Forward & Back
             M0 = -
             M1 = +
