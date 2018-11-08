@@ -23,36 +23,38 @@ public class MainMotor2018 extends LinearOpMode{
 
         waitForStart();
 
-        double controllerPowerY = 0;
-        double controllerPowerX = 0;
+        double controllerPowerLeftY = 0;
+        double controllerPowerLeftX = 0;
+        double controllerPowerRightY = 0;
+        double controllerPowerRightX = 0;
         while (opModeIsActive()) {
-            controllerPowerY = -this.gamepad1.left_stick_y;
+            controllerPowerLeftY = -this.gamepad1.left_stick_y;
             //Forwards and Backwards
-            Motor0.setPower(-controllerPowerY);
-            Motor1.setPower(controllerPowerY);
-            Motor2.setPower(controllerPowerY);
-            Motor3.setPower(-controllerPowerY);
+            Motor0.setPower(-controllerPowerLeftY);
+            Motor1.setPower(controllerPowerLeftY);
+            Motor2.setPower(controllerPowerLeftY);
+            Motor3.setPower(-controllerPowerLeftY);
 
             //Left and Right turning
-            controllerPowerX = -this.gamepad1.right_stick_x;
-            Motor0.setPower(controllerPowerX);
-            Motor1.setPower(controllerPowerX);
-            Motor2.setPower(controllerPowerX);
-            Motor3.setPower(controllerPowerX);
-            /*
-            Diagonal Strafe
-            M0 = +
-            M1 = +
-            M2 = -
-            M3 = -
+            controllerPowerLeftX = -this.gamepad1.left_stick_x;
+            Motor0.setPower(controllerPowerLeftX);
+            Motor1.setPower(controllerPowerLeftX);
+            Motor2.setPower(controllerPowerLeftX);
+            Motor3.setPower(controllerPowerLeftX);
 
-            Forward & Back
-            M0 = -
-            M1 = +
-            M2 = +
-            M3 = -
-             */
-            telemetry.addData("Motor Power", controllerPowerY);
+            // Must Be Checked
+            controllerPowerRightX = -this.gamepad1.right_stick_y;
+            Motor0.setPower(-controllerPowerRightY);
+            Motor1.setPower(-controllerPowerRightY);
+            Motor2.setPower(controllerPowerRightY);
+            Motor3.setPower(controllerPowerRightY);
+            //  Must Be Checked
+            controllerPowerRightX = -this.gamepad1.right_stick_x;
+            Motor0.setPower(controllerPowerRightX);
+            Motor1.setPower(controllerPowerRightX);
+            Motor2.setPower(-controllerPowerRightX);
+            Motor3.setPower(-controllerPowerRightX);
+
             telemetry.addData("Motor0", Motor0.getPower());
             telemetry.addData("Motor1", Motor1.getPower());
             telemetry.addData("Motor2", Motor2.getPower());
