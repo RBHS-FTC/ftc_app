@@ -55,14 +55,6 @@ public class MainMotor2018 extends LinearOpMode{
             Motor2.setPower(-controllerPowerRightX);
             Motor3.setPower(-controllerPowerRightX);
 
-
-            /*
-            Forward & Back
-            M0 = -
-            M1 = +
-            M2 = +
-            M3 = -
-             */
             telemetry.addData("Motor0", Motor0.getPower());
             telemetry.addData("Motor1", Motor1.getPower());
             telemetry.addData("Motor2", Motor2.getPower());
