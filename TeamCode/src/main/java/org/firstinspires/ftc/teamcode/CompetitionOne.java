@@ -6,39 +6,29 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class TwoControllerTest extends LinearOpMode {
-    private DcMotor Motor0;
-    private DcMotor Motor1;
-    private DcMotor Motor2;
-    private DcMotor Motor3;
-    private DcMotor Motor4;
-    private DcMotor Motor5;
-    private DcMotor Motor6;
-    private DcMotor Motor7;
-    private Servo Servo0;
-    private Servo Servo1;
+public class CompetitionOne extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        Motor0 = hardwareMap.get(DcMotor.class, "Motor0");
-        Motor1 = hardwareMap.get(DcMotor.class, "Motor1");
-        Motor2 = hardwareMap.get(DcMotor.class, "Motor2");
-        Motor3 = hardwareMap.get(DcMotor.class, "Motor3");
-        Motor4 = hardwareMap.get(DcMotor.class, "Motor4");
-        Motor5 = hardwareMap.get(DcMotor.class, "Motor5");
-        Motor6 = hardwareMap.get(DcMotor.class, "Motor6");
-        Motor7 = hardwareMap.get(DcMotor.class, "Motor7");
+        DcMotor Motor0 = hardwareMap.get(DcMotor.class, "Motor0");
+        DcMotor Motor1 = hardwareMap.get(DcMotor.class, "Motor1");
+        DcMotor Motor2 = hardwareMap.get(DcMotor.class, "Motor2");
+        DcMotor Motor3 = hardwareMap.get(DcMotor.class, "Motor3");
+        DcMotor Motor4 = hardwareMap.get(DcMotor.class, "Motor4");
+        DcMotor Motor5 = hardwareMap.get(DcMotor.class, "Motor5");
+        DcMotor Motor6 = hardwareMap.get(DcMotor.class, "Motor6");
+        DcMotor Motor7 = hardwareMap.get(DcMotor.class, "Motor7");
 
-        Servo0 = hardwareMap.get(Servo.class, "Servo0");
-        Servo1 = hardwareMap.get(Servo.class, "Servo1");
+        Servo Servo0 = hardwareMap.get(Servo.class, "Servo0");
+        Servo Servo1 = hardwareMap.get(Servo.class, "Servo1");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
         waitForStart();
 
-        double controllerOnePowerLeftY = 0;
-        double controllerTwoPowerRightY = 0;
+        double controllerOnePowerLeftY;
+        double controllerTwoPowerRightY;
         while (opModeIsActive()) {
             controllerOnePowerLeftY = -this.gamepad2.left_stick_y;
             controllerTwoPowerRightY = -this.gamepad2.right_stick_y;
