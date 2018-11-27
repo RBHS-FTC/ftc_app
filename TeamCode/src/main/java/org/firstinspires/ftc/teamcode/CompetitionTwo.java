@@ -94,6 +94,8 @@ public class CompetitionTwo extends LinearOpMode {
             telemetry.addData("Motor3", Motor3.getPower());
             telemetry.addData("Motor4", Motor4.getPower());
             telemetry.addData("Motor5", Motor5.getPower());
+            telemetry.addData("Motor6", Motor6.getPower());
+            telemetry.addData("Motor7", Motor7.getPower());
             telemetry.addData("Servo0", Servo0.getPosition());
             telemetry.addData("Servo1", Servo1.getPosition());
             telemetry.update();
