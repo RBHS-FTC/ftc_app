@@ -48,6 +48,14 @@ public class CompetitionTwo extends LinearOpMode {
             controllerTwoPowerLeftY = -this.gamepad2.left_stick_y;
             controllerTwoPowerRightY = -this.gamepad2.right_stick_y;
 
+            //Tank Drive
+            //Left Side
+            Motor2.setPower(controllerPowerLeftY);
+            Motor3.setPower(controllerPowerLeftY);
+            //Right Side
+            Motor1.setPower(controllerPowerRightY);
+            Motor4.setPower(controllerPowerRightY);
+
             //Forwards and Backwards
             Motor0.setPower(-controllerPowerLeftY);
             Motor1.setPower(controllerPowerLeftY);
